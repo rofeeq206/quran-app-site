@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Feedback: The Holy Qur'an app</title>
+  <meta name="description" content="Tell us what works, what doesn't, and what you'd like to see. Screenshots welcome." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#050605" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="feedback.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="./">
+        <img src="assets/icon-192.png" alt="" width="36" height="36" />
+        <span>The Holy Qur'an</span>
+      </a>
+      <div class="nav-links">
+        <a href="./#features">Features</a>
+        <a class="pill" href="./#download">Get the App <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="fb">
+    <div class="stars" aria-hidden="true"></div>
+    <section class="fb-head">
+      <p class="kicker" style="--k: #8fe58f">Testing</p>
+      <h1>Share your feedback</h1>
+      <p class="fb-lede">Found a bug, have an idea, or something felt off? Tell us, and add screenshots if they help.</p>
+    </section>
+
+    <form id="fb-form" class="fb-card" novalidate>
+      <fieldset class="fb-kind">
+        <legend>What is it about?</legend>
+        <label><input type="radio" name="kind" value="bug" checked /><span>Bug</span></label>
+        <label><input type="radio" name="kind" value="idea" /><span>Idea</span></label>
+        <label><input type="radio" name="kind" value="other" /><span>Other</span></label>
+      </fieldset>
+
+      <label class="fb-field">
+        <span>Your feedback <em>required</em></span>
+        <textarea name="message" rows="6" maxlength="5000" required placeholder="What happened, or what would you like to see? For bugs: which page or verse, and what you expected."></textarea>
+      </label>
+
+      <div class="fb-field">
+        <span>Screenshots <em>optional · up to 5 images</em></span>
+        <label class="fb-drop" id="drop">
+          <input type="file" id="files" accept="image/*" multiple />
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5h-3.2l-1.6-2H9.8L8.2 5H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-7 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          <b>Tap to add screenshots</b>
+          <small>or drop them here</small>
+        </label>
+        <ul class="fb-previews" id="previews"></ul>
+      </div>
+
+      <div class="fb-row">
+        <label class="fb-field">
+          <span>Name <em>optional</em></span>
+          <input type="text" name="name" maxlength="100" autocomplete="name" />
+        </label>
+        <label class="fb-field">
+          <span>Email <em>optional, if you'd like a reply</em></span>
+          <input type="email" name="email" maxlength="200" autocomplete="email" />
+        </label>
+      </div>
+
+      <!-- Spam trap: people never see or fill this. -->
+      <label class="fb-trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+
+      <p class="fb-note" id="device-note"></p>
+      <button class="fb-submit" type="submit" id="submit">Send feedback</button>
+      <p class="fb-status" id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="fb-card fb-done" id="done" hidden>
+      <h2>Thank you!</h2>
+      <p>Your feedback was sent. It helps make the app better for everyone.</p>
+      <p><a href="feedback.html">Send more</a> · <a href="./">Back to the home page</a></p>
+    </section>
+  </main>
+
+  <script src="feedback.js" defer></script>
+</body>
+</html>
