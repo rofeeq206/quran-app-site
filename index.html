@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The Holy Qur'an — the mushaf you know, in your pocket</title>
+  <meta name="description" content="All 601 pages of the Khatt-e-Manzoor mushaf, exactly as printed. Go to any verse, highlight what moves you, and read a little every day. Fully offline." />
+  <meta name="theme-color" content="#050605" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <meta property="og:title" content="The Holy Qur'an — mushaf reader" />
+  <meta property="og:description" content="All 601 pages of the Khatt-e-Manzoor mushaf, exactly as printed. Fully offline." />
+  <meta property="og:image" content="assets/icon-192.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#download">Skip to download</a>
+
+  <!-- ─────────── Navigation ─────────── -->
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="#top">
+        <img src="assets/icon-192.png" alt="" width="36" height="36" />
+        <span>The Holy Qur'an</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#install">Install</a>
+        <a class="pill" href="#download">Get the App <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ─────────── Hero: rotating intention ─────────── -->
+    <section class="hero">
+      <div class="stars" aria-hidden="true"></div>
+      <h1>
+        <span class="rotator" aria-live="polite">
+          <span class="word is-active" style="--c: #e3b341">Read Daily</span>
+          <span class="word" style="--c: #8fe58f">Reflect Deeply</span>
+          <span class="word" style="--c: #8ab8ff">Find Any Verse</span>
+          <span class="word" style="--c: #f59ac0">Keep Your Place</span>
+        </span>
+        <span class="with">with the Holy Qur'an</span>
+      </h1>
+      <p class="sub">
+        All 601 pages of the Khatt-e-Manzoor mushaf, exactly as printed.<br class="br" />
+        On your phone, fully offline.
+      </p>
+
+      <div class="cta" id="download">
+        <a class="store-badge" href="https://github.com/rofeeq206/quran-app-site/releases/latest/download/Quran-App.apk" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48 19.44 6.3a.38.38 0 0 0-.66-.38l-1.86 3.22A11.4 11.4 0 0 0 12 8.1c-1.77 0-3.43.37-4.92 1.04L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52ZM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>
+          <span><small>Download for</small>Android</span>
+        </a>
+        <span class="store-badge is-muted" aria-disabled="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.76c-.02-2.32 1.9-3.43 1.98-3.49-1.08-1.58-2.76-1.8-3.36-1.82-1.43-.14-2.79.84-3.51.84-.73 0-1.84-.82-3.03-.8a4.5 4.5 0 0 0-3.8 2.3c-1.62 2.8-.41 6.96 1.17 9.24.77 1.11 1.69 2.37 2.9 2.32 1.16-.05 1.6-.75 3.01-.75 1.4 0 1.8.75 3.03.73 1.25-.02 2.04-1.14 2.8-2.26.88-1.3 1.25-2.55 1.27-2.62-.03-.01-2.43-.93-2.46-3.69ZM14.07 5.95c.64-.78 1.07-1.85.95-2.93-.92.04-2.04.61-2.7 1.39-.59.69-1.11 1.79-.97 2.85 1.03.08 2.08-.52 2.72-1.31Z"/></svg>
+          <span><small>Coming soon for</small>iPhone</span>
+        </span>
+      </div>
+      <p class="meta" data-version>Android 7.0 or newer · free · no account, no ads</p>
+    </section>
+
+    <!-- ─────────── Phone carousel ─────────── -->
+    <section class="carousel" aria-label="App screenshots">
+      <div class="track">
+        <!-- The set is repeated once so the scroll can loop seamlessly. -->
+        <div class="set">
+          <figure class="phone"><img src="assets/screens/splash.webp" alt="Opening screen with the green cover" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/reader-highlight.webp" alt="Page 49 with verse 2:285 highlighted" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/reader-night.webp" alt="The same page in night mode" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/zoom.webp" alt="A zoomed-in page" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/progress.webp" alt="Reading progress: goal, streak and khatm" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/goto.webp" alt="Go to chapter and verse" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/tips.webp" alt="Reading tips" width="540" height="1096" /></figure>
+        </div>
+        <div class="set" aria-hidden="true">
+          <figure class="phone"><img src="assets/screens/splash.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/reader-highlight.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/reader-night.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/zoom.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/progress.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/goto.webp" alt="" width="540" height="1096" /></figure>
+          <figure class="phone"><img src="assets/screens/tips.webp" alt="" width="540" height="1096" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── Statement ─────────── -->
+    <section class="statement reveal">
+      <h2>The mushaf you know,<br />wherever you are.</h2>
+      <p>
+        The same pages as the printed copy.<br />
+        The same lines, the same margin notes.<br />
+        Any verse, a tap away.<br />
+        <strong>Built around your daily reading.</strong>
+      </p>
+    </section>
+
+    <!-- ─────────── Feature cards ─────────── -->
+    <section class="cards" id="features">
+      <article class="card reveal" style="--k: #8fe58f">
+        <div class="card-text">
+          <p class="kicker">Reading</p>
+          <h3>Page true.<br />Line for line.</h3>
+          <p>All 601 pages of the Khatt-e-Manzoor, Indo-Pak mushaf. Swipe right for the next page, just like turning a printed copy.</p>
+          <p>Pinch to zoom, and switch to night mode for soft light-on-dark reading.</p>
+        </div>
+        <figure class="card-phone"><img src="assets/screens/reader-night.webp" alt="A page in night mode" width="540" height="1096" loading="lazy" /></figure>
+      </article>
+
+      <article class="card reveal" style="--k: #8ab8ff">
+        <div class="card-text">
+          <p class="kicker">Navigation</p>
+          <h3>Any verse,<br />in seconds.</h3>
+          <p>Enter chapter and verse, or search a surah by name. The page opens with the verse highlighted.</p>
+          <p>Numbering matches alislam.org: 2:285 here is 2:285 there.</p>
+        </div>
+        <figure class="card-phone"><img src="assets/screens/goto.webp" alt="Go to chapter and verse" width="540" height="1096" loading="lazy" /></figure>
+      </article>
+
+      <article class="card reveal" style="--k: #e3b341">
+        <div class="card-text">
+          <p class="kicker">Highlights</p>
+          <h3>Mark what<br />moves you.</h3>
+          <p>Long-press a verse to highlight it in one of four colours.</p>
+          <p>Every highlight and bookmark waits for you, one tap away.</p>
+        </div>
+        <figure class="card-phone"><img src="assets/screens/reader-highlight.webp" alt="A verse highlighted in gold" width="540" height="1096" loading="lazy" /></figure>
+      </article>
+
+      <article class="card reveal" style="--k: #f59ac0">
+        <div class="card-text">
+          <p class="kicker">Daily habit</p>
+          <h3>A little,<br />every day.</h3>
+          <p>Set a goal of a page or a juz a day. Build a streak and follow your khatm.</p>
+          <p>A gentle reminder arrives only if you haven’t read yet.</p>
+        </div>
+        <figure class="card-phone"><img src="assets/screens/progress.webp" alt="Reading progress" width="540" height="1096" loading="lazy" /></figure>
+      </article>
+    </section>
+
+    <!-- ─────────── Privacy ─────────── -->
+    <section class="trio" id="privacy">
+      <div class="trio-item reveal">
+        <span class="trio-icon" style="--k: #8fe58f">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.5 8 11 4.6-1.5 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.8-4.8 1.4 1.4-6.2 6.2Z"/></svg>
+        </span>
+        <h3>Fully offline</h3>
+        <p>Every page is inside the app. Read on a plane, in the masjid, anywhere without signal.</p>
+      </div>
+      <div class="trio-item reveal">
+        <span class="trio-icon" style="--k: #8ab8ff">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 4a3 3 0 0 0-2.8 2H3v2h11.2A3 3 0 1 0 17 4Zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM7 10a3 3 0 0 0-2.8 2H3v2h1.2A3 3 0 1 0 7 10Zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm2.8-2H21v2H9.8a3 3 0 0 0 0-2ZM17 16a3 3 0 0 0-2.8 2H3v2h11.2A3 3 0 1 0 17 16Zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
+        </span>
+        <h3>Stays on your phone</h3>
+        <p>Your last page, bookmarks, highlights and progress are saved only on your device. No accounts.</p>
+      </div>
+      <div class="trio-item reveal">
+        <span class="trio-icon" style="--k: #f59ac0">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 0 1 6.3 12.9L7.1 5.7A8 8 0 0 1 12 4ZM4 12c0-1.8.6-3.5 1.7-4.9l11.2 11.2A8 8 0 0 1 4 12Z"/></svg>
+        </span>
+        <h3>No ads. No trackers.</h3>
+        <p>Nothing to distract from reading, and nothing collected about you. Ever.</p>
+      </div>
+    </section>
+
+    <!-- ─────────── The mushaf in numbers ─────────── -->
+    <section class="numbers" id="mushaf" aria-label="The mushaf in numbers">
+      <h2 class="reveal">The complete mushaf</h2>
+      <div class="stats">
+        <div class="stat reveal"><strong>601</strong><span>printed pages</span></div>
+        <div class="stat reveal"><strong>114</strong><span>surahs</span></div>
+        <div class="stat reveal"><strong>30</strong><span>juz</span></div>
+        <div class="stat reveal"><strong>6,348</strong><span>verses, Bismillah counted</span></div>
+      </div>
+      <p class="edition reveal">
+        <em>The Holy Qur’an</em> (Arabic), Khatt-e-Manzoor script, Nazarat Nashr-o-Isha’at Qadian, 2nd edition, 2020.
+      </p>
+    </section>
+
+    <!-- ─────────── Install ─────────── -->
+    <section class="install" id="install">
+      <h2 class="reveal">Install in a minute</h2>
+      <ol class="steps">
+        <li class="reveal"><span>1</span><h3>Download</h3><p>Tap <a href="https://github.com/rofeeq206/quran-app-site/releases/latest/download/Quran-App.apk" download>Download for Android</a> on your phone (about <b data-size>90</b> MB).</p></li>
+        <li class="reveal"><span>2</span><h3>Allow the install</h3><p>Open the file and allow installing from your browser or files app when Android asks.</p></li>
+        <li class="reveal"><span>3</span><h3>Start reading</h3><p>If Play Protect calls the app unknown, choose <em>Install anyway</em> — it isn’t on the Play Store yet.</p></li>
+      </ol>
+      <p class="ios reveal"><strong>iPhone?</strong> An iPhone version is on its way.</p>
+    </section>
+  </main>
+
+  <!-- ─────────── Footer ─────────── -->
+  <footer class="footer">
+    <div class="footer-card">
+      <a class="brand brand-dark" href="#top">
+        <img src="assets/icon-192.png" alt="" width="44" height="44" />
+        <span>The Holy Qur'an</span>
+      </a>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="https://github.com/rofeeq206/quran-app-site/releases/latest/download/Quran-App.apk" download>Download <span aria-hidden="true">↗</span></a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#install">Install guide</a>
+        <a href="#download">iPhone (coming soon)</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#mushaf">The edition</a>
+        <a href="#privacy">No ads, no tracking</a>
+      </div>
+    </div>
+    <p class="copyright" data-version-full>Android app · version 1.0</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
