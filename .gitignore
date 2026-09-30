@@ -1,2 +1,6 @@
 ﻿# The APK is published as a GitHub Release asset, not committed here.
 *.apk
+
+# Vercel CLI link
+.vercel
+.vercel
