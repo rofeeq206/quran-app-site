@@ -2,7 +2,7 @@
 // the message to the `feedback` table. The publishable key only allows *sending*
 // feedback (row-level security); nothing can be read back with it.
 //
-// The app opens this page as feedback.html?v=<version>&build=<n>&device=<model> so bug
+// The app opens this page as /feedback?v=<version>&build=<n>&device=<model> so bug
 // reports arrive with the app version and phone.
 
 const SUPABASE_URL = 'https://phqhwmggpeowmjjxjswk.supabase.co';
