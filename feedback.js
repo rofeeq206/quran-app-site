@@ -28,6 +28,20 @@ document.getElementById('device-note').textContent = appVersion
   ? `App ${appVersion} on ${params.get('device') || 'your phone'} will be included to help us reproduce issues.`
   : 'Your browser/phone type is included to help us reproduce issues.';
 
+// Opened from an older app build: offer the latest one (older builds have no update check of their own).
+const openedFromBuild = Number(params.get('build'));
+if (openedFromBuild) {
+  fetch(`/downloads/version.json?t=${Date.now()}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((latest) => {
+      if (!latest || !(latest.build > openedFromBuild)) return;
+      document.getElementById('fb-update-text').textContent =
+        `You have build ${openedFromBuild}; build ${latest.build} has fixes and new features. Install it over your current app: your bookmarks and progress are kept.`;
+      document.getElementById('fb-update').hidden = false;
+    })
+    .catch(() => {});
+}
+
 function setStatus(text, isError = false) {
   statusEl.textContent = text;
   statusEl.classList.toggle('is-error', isError);

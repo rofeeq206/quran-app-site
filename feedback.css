@@ -238,3 +238,34 @@
 [hidden] {
   display: none !important;
 }
+
+.fb-update {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 22px;
+  padding: 18px 22px;
+  border: 1px solid rgba(143, 229, 143, 0.45);
+  border-radius: 20px;
+  background: rgba(143, 229, 143, 0.08);
+}
+.fb-update strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.fb-update span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.fb-update-btn {
+  background: var(--accent);
+  color: #06210a;
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
