@@ -29,8 +29,9 @@ document.getElementById('device-note').textContent = appVersion
   : 'Your browser/phone type is included to help us reproduce issues.';
 
 // Opened from an older app build: offer the latest one (older builds have no update check of their own).
+// Play Store installs update through Play, so they are not offered the APK.
 const openedFromBuild = Number(params.get('build'));
-if (openedFromBuild) {
+if (openedFromBuild && params.get('store') !== 'play') {
   fetch(`/downloads/version.json?t=${Date.now()}`)
     .then((r) => (r.ok ? r.json() : null))
     .then((latest) => {

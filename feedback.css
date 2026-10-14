@@ -269,3 +269,39 @@
   text-decoration: none;
   white-space: nowrap;
 }
+
+/* Privacy policy */
+.legal {
+  display: block;
+  line-height: 1.65;
+  color: #c5cec7;
+}
+.legal h2 {
+  font: 700 1.3rem var(--display, Fraunces, serif);
+  color: var(--text);
+  margin: 30px 0 10px;
+}
+.legal p,
+.legal ul {
+  margin: 0 0 12px;
+}
+.legal ul {
+  padding-left: 1.2em;
+}
+.legal li {
+  margin-bottom: 6px;
+}
+.legal a {
+  color: var(--accent);
+}
+.legal strong {
+  color: var(--text);
+}
+.legal-date {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.legal code {
+  font-size: 0.9em;
+  color: var(--text);
+}
