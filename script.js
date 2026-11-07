@@ -38,8 +38,6 @@ fetch('downloads/version.json', { cache: 'no-store' })
   .then((r) => (r.ok ? r.json() : null))
   .then((info) => {
     if (!info) return;
-    const meta = document.querySelector('[data-version]');
-    if (meta) meta.textContent = `Android 7.0 or newer · ${info.sizeMB} MB · free · no account, no ads`;
     document.querySelectorAll('[data-size]').forEach((el) => (el.textContent = info.sizeMB));
     const full = document.querySelector('[data-version-full]');
     if (full) full.textContent = `Android app · version ${info.version} (build ${info.build}) · updated ${info.date}`;
