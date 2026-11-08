@@ -1,5 +1,5 @@
 {
   "play": { "latest": "1.0.0", "minimum": null, "message": null },
   "appstore": { "latest": "1.0.0", "minimum": null, "message": null },
-  "apk": { "minimumBuild": 999, "message": "Test of the update screen. This will be removed in a few minutes." }
+  "apk": { "minimumBuild": null, "message": null }
 }
