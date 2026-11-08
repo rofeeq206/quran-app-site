@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Admin: The Holy Qur'an app</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#050605" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="feedback.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="brand" href="./">
+        <img src="assets/icon-192.png" alt="" width="36" height="36" />
+        <span>The Holy Qur'an</span>
+      </a>
+      <div class="nav-links" id="account" hidden>
+        <span class="ad-who" id="who"></span>
+        <button class="pill ad-pill" type="button" id="sign-out">Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="ad">
+    <div class="stars" aria-hidden="true"></div>
+
+    <!-- Sign in -->
+    <section class="ad-narrow" id="signin" hidden>
+      <div class="fb-head">
+        <p class="kicker" style="--k: #8fe58f">Admin</p>
+        <h1>Sign in</h1>
+      </div>
+      <form class="fb-card" id="signin-form" novalidate>
+        <label class="fb-field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="username" required />
+        </label>
+        <label class="fb-field">
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <div class="ad-actions">
+          <button class="fb-submit" type="submit">Sign in</button>
+          <button class="ad-link" type="button" id="forgot">Forgot password?</button>
+        </div>
+        <p class="fb-status" id="signin-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Set a new password (from the emailed link) -->
+    <section class="ad-narrow" id="setpw" hidden>
+      <div class="fb-head">
+        <p class="kicker" style="--k: #8fe58f">Admin</p>
+        <h1>Set your password</h1>
+      </div>
+      <form class="fb-card" id="setpw-form" novalidate>
+        <label class="fb-field">
+          <span>New password <em>at least 10 characters</em></span>
+          <input type="password" name="password" autocomplete="new-password" minlength="10" required />
+        </label>
+        <label class="fb-field">
+          <span>Repeat it</span>
+          <input type="password" name="confirm" autocomplete="new-password" minlength="10" required />
+        </label>
+        <button class="fb-submit" type="submit">Save password</button>
+        <p class="fb-status" id="setpw-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dash" hidden>
+      <div class="ad-head">
+        <div>
+          <p class="kicker" style="--k: #8fe58f">Admin</p>
+          <h1>Dashboard</h1>
+        </div>
+        <button class="ad-ghost" type="button" id="refresh">Refresh</button>
+      </div>
+      <p class="fb-status" id="dash-status" role="status" aria-live="polite"></p>
+
+      <div class="ad-tiles">
+        <div class="ad-tile"><span>Feedback</span><b id="t-total">–</b><small id="t-total-sub"></small></div>
+        <div class="ad-tile"><span>Needs attention</span><b id="t-new">–</b><small>status “New”</small></div>
+        <div class="ad-tile"><span>Last 7 days</span><b id="t-week">–</b><small id="t-week-sub"></small></div>
+        <div class="ad-tile"><span>APK downloads</span><b id="t-apk">–</b><small id="t-apk-sub"></small></div>
+      </div>
+
+      <div class="ad-grid">
+        <section class="fb-card ad-chart">
+          <h2>Feedback per week</h2>
+          <p class="ad-sub">Last 12 weeks</p>
+          <div class="ad-bars" id="c-weeks"></div>
+          <details><summary>Show as table</summary><table class="ad-table" id="tb-weeks"></table></details>
+        </section>
+        <section class="fb-card ad-chart">
+          <h2>APK downloads per release</h2>
+          <p class="ad-sub">Website APK, latest 12 releases (Google Play and App Store installs are in their consoles)</p>
+          <div class="ad-bars" id="c-apk"></div>
+          <details><summary>Show as table</summary><table class="ad-table" id="tb-apk"></table></details>
+        </section>
+      </div>
+
+      <section class="fb-card ad-split">
+        <div><h2>By type</h2><ul class="ad-list" id="b-kind"></ul></div>
+        <div><h2>By store</h2><ul class="ad-list" id="b-store"></ul></div>
+        <div><h2>By app version</h2><ul class="ad-list" id="b-version"></ul></div>
+      </section>
+
+      <section class="ad-feed">
+        <div class="ad-feed-head">
+          <h2>Feedback</h2>
+          <span class="ad-sub" id="f-count"></span>
+        </div>
+        <div class="ad-filters">
+          <fieldset class="fb-kind" id="f-status">
+            <legend class="ad-sr">Status</legend>
+            <label><input type="radio" name="fstatus" value="open" checked /><span>Open</span></label>
+            <label><input type="radio" name="fstatus" value="new" /><span>New</span></label>
+            <label><input type="radio" name="fstatus" value="in_progress" /><span>In progress</span></label>
+            <label><input type="radio" name="fstatus" value="done" /><span>Done</span></label>
+            <label><input type="radio" name="fstatus" value="all" /><span>All</span></label>
+          </fieldset>
+          <label class="ad-select"><span class="ad-sr">Type</span>
+            <select id="f-kind">
+              <option value="all">All types</option>
+              <option value="bug">Bugs</option>
+              <option value="idea">Ideas</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="ad-search"><span class="ad-sr">Search</span>
+            <input type="search" id="f-search" placeholder="Search message, name, email, device" />
+          </label>
+        </div>
+        <ul class="ad-items" id="items"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>

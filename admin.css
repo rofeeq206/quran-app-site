@@ -1,0 +1,461 @@
+/* Admin dashboard: builds on styles.css and feedback.css. */
+
+.ad {
+  position: relative;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 64px) var(--gutter) 80px;
+}
+.ad > section {
+  position: relative;
+}
+.ad-narrow {
+  max-width: 460px;
+  margin: 0 auto;
+}
+.ad h2 {
+  font-size: 1.3rem;
+}
+.ad-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 4px 0 0;
+}
+.ad-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.fb-field input[type='password'],
+.ad-search input,
+.ad-select select,
+.ad-note textarea {
+  width: 100%;
+  background: #0a0e0b;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 11px 14px;
+  font: inherit;
+}
+.ad-search input:focus,
+.ad-select select:focus,
+.ad-note textarea:focus,
+.fb-field input[type='password']:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(143, 229, 143, 0.15);
+}
+
+/* Buttons */
+.ad-pill {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.ad-who {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.ad-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+.ad-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ad-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 9px 20px;
+  font: 600 0.95rem var(--body);
+  cursor: pointer;
+}
+.ad-ghost:hover {
+  border-color: var(--accent);
+}
+.ad-ghost:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.ad-danger {
+  color: #ff9b8f;
+  border-color: rgba(255, 155, 143, 0.35);
+}
+.ad-danger:hover {
+  border-color: #ff9b8f;
+}
+
+/* Header and tiles */
+.ad-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.ad-head h1 {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  line-height: 1.1;
+}
+.ad-head .kicker {
+  margin-bottom: 8px;
+}
+.ad-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 8px 0 16px;
+}
+.ad-tile {
+  background: linear-gradient(160deg, var(--bg-card-2), var(--bg-card));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px 22px;
+  display: grid;
+  gap: 2px;
+}
+.ad-tile span {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.ad-tile b {
+  font: 700 2.4rem/1.15 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.ad-tile small {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Charts */
+.ad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.ad-chart {
+  gap: 14px;
+  align-content: start;
+}
+.ad-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 170px;
+  padding-top: 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.ad-bar {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  outline: none;
+}
+.ad-bar i {
+  display: block;
+  width: 100%;
+  min-height: 2px;
+  background: #3fa63f;
+  border-radius: 4px 4px 0 0;
+}
+.ad-bar.is-zero i {
+  background: rgba(255, 255, 255, 0.12);
+}
+.ad-bar:hover i,
+.ad-bar:focus-visible i {
+  background: var(--accent);
+}
+.ad-bar .tip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a221c;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  padding: 4px 9px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+}
+.ad-bar:hover .tip,
+.ad-bar:focus-visible .tip {
+  opacity: 1;
+}
+.ad-bar:first-child .tip {
+  left: 0;
+  transform: none;
+}
+.ad-bar:last-child .tip {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+.ad-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: -6px;
+}
+.ad-chart details summary {
+  color: var(--muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.ad-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.ad-table th,
+.ad-table td {
+  text-align: left;
+  padding: 5px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.ad-table td:last-child,
+.ad-table th:last-child {
+  text-align: right;
+}
+
+/* Breakdowns */
+.ad-split {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 36px;
+}
+.ad-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.ad-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  font-size: 0.95rem;
+}
+.ad-list b {
+  font-variant-numeric: tabular-nums;
+}
+.ad-list .meter {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+.ad-list .meter i {
+  display: block;
+  height: 100%;
+  background: #3fa63f;
+  border-radius: 4px;
+}
+.ad-list .empty {
+  color: var(--muted);
+}
+
+/* Feedback list */
+.ad-feed-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.ad-feed-head h2 {
+  font-size: 1.8rem;
+}
+.ad-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.ad-filters .fb-kind span {
+  padding: 7px 16px;
+  font-size: 0.92rem;
+}
+.ad-select {
+  width: auto;
+}
+.ad-select select {
+  padding: 9px 12px;
+}
+.ad-search {
+  flex: 1;
+  min-width: 220px;
+}
+.ad-search input {
+  padding: 9px 14px;
+}
+.ad-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.ad-item {
+  background: linear-gradient(160deg, var(--bg-card-2), var(--bg-card));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 20px 22px;
+  display: grid;
+  gap: 12px;
+}
+.ad-item.is-new {
+  border-color: rgba(143, 229, 143, 0.4);
+}
+.ad-item-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.ad-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.ad-badge svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+.ad-badge.bug {
+  color: #ffb3a8;
+}
+.ad-badge.idea {
+  color: var(--gold);
+}
+.ad-badge.other {
+  color: #c9d1cb;
+}
+.ad-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.ad-status {
+  margin-left: auto;
+}
+.ad-status select {
+  background: #0a0e0b;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: 600 0.88rem var(--body);
+}
+.ad-msg {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.ad-from {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  color: #c5cec7;
+  font-size: 0.9rem;
+}
+.ad-from a {
+  color: var(--accent);
+}
+.ad-shots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ad-shots a {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0a0e0b;
+}
+.ad-shots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ad-note {
+  display: grid;
+  gap: 8px;
+}
+.ad-note textarea {
+  min-height: 44px;
+  resize: vertical;
+  font-size: 0.92rem;
+}
+.ad-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.ad-item-actions .ad-saved {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.ad-empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 30px 0;
+}
+
+@media (max-width: 960px) {
+  .ad-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ad-grid,
+  .ad-split {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .ad-who {
+    display: none;
+  }
+  .ad-status {
+    margin-left: 0;
+  }
+  .ad-tile b {
+    font-size: 2rem;
+  }
+}

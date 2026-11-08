@@ -166,6 +166,7 @@ form.addEventListener('submit', async (e) => {
         app_version: appVersion.slice(0, 60) || null,
         device,
         screenshots: paths,
+        store: ['apk', 'play', 'appstore'].includes(params.get('store')) ? params.get('store') : null,
       }),
     });
     if (!res.ok) throw new Error(`saving failed (${res.status})`);
