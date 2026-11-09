@@ -1,5 +1,5 @@
 {
-  "play": { "latest": "1.0.0", "minimum": null, "message": null },
+  "play": { "latest": "1.1.0", "minimum": null, "message": null },
   "appstore": { "latest": "1.0.0", "minimum": null, "message": null },
   "apk": { "minimumBuild": null, "message": null }
 }
